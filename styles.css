@@ -61,7 +61,7 @@ body {
   padding-right: 20px;
 }
 .welcome-image img {
-  width: 66%; /* Reduced to about 1/3 smaller */
+  width: 50%; /* Reduced from 66% to make the picture smaller */
   height: auto;
   border-radius: 50%;
 }
@@ -70,12 +70,13 @@ body {
 .contact-links {
   margin-top: 20px;
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 .contact-links a {
   color: #333;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-decoration: none;
   transition: color 0.3s;
 }
