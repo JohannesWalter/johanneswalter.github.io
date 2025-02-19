@@ -61,7 +61,7 @@ body {
   padding-right: 20px;
 }
 .welcome-image img {
-  width: 60%; /* Reduced from 66% to make the picture smaller */
+  width: 80%; 
   height: auto;
   border-radius: 50%;
 }
