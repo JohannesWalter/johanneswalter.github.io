@@ -209,4 +209,36 @@ footer {
   padding: 20px 0;
   /* border-top: 1px solid #ddd; */
   margin-top: 40px;
+}
+
+.contact-item {
+  margin-bottom: 8px;
+}
+
+.contact-item a {
+  display: flex;
+  align-items: center;
+}
+
+.contact-item i {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.contact-item span {
+  margin-left: 4px;
+}
+
+.welcome-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.welcome-image {
+  flex-shrink: 0;
+}
+
+.welcome-text {
+  flex: 1;
 } 
