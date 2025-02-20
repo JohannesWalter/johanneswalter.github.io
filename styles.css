@@ -245,3 +245,44 @@ footer {
 main {
   flex: 1;
 } 
+
+/* Dark mode styles */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --link-color: #0066cc;
+  }
+  
+  [data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --link-color: #66b3ff;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  
+  a {
+    color: var(--link-color);
+  }
+  
+  #darkModeToggle {
+    cursor: pointer;
+  }
+  
+  #darkModeToggle i {
+    font-size: 1.2rem;
+  }
+  
+  /* Adjust other elements for dark mode */
+  [data-theme="dark"] header,
+  [data-theme="dark"] footer {
+    background-color: #2d2d2d;
+  }
+  
+  [data-theme="dark"] .navbar a {
+    color: var(--text-color);
+  }
