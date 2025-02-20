@@ -12,6 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (savedTheme) {
     document.documentElement.setAttribute("data-theme", savedTheme);
     updateModeText(savedTheme);
+  } else {
+    // Check the user's preferred color scheme
+    const userPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const defaultTheme = userPrefersDark ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", defaultTheme);
+    updateModeText(defaultTheme);
   }
 
   darkModeToggle.addEventListener("click", (e) => {

@@ -199,7 +199,7 @@ body {
 
 .paper-list a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
   font-size: 1.1rem;
 }
 
