@@ -10,6 +10,10 @@ body {
   font-family: Arial, sans-serif;
   background-color: #fff;
   color: #333;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Container */
@@ -68,23 +72,36 @@ body {
 
 /* Contact Links Below the Image */
 .contact-links {
-  margin-top: 20px;
+  margin-top: 1rem;
+  width: 60%;  /* Match the image width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-item {
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.contact-item a {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 10px;  /* Adds space between each link */
-}
-.contact-links a {
-  display: flex;        /* Make the icon and text sit side by side */
-  align-items: center;  /* Vertically center the icon and text */
-  gap: 8px;             /* Space between the icon and the text */
-  color: #333;
-  font-size: 1.2rem;
   text-decoration: none;
-  transition: color 0.3s;
+  width: 100%;
 }
-.contact-links a:hover {
-  color: #555;
+
+.contact-item i,
+.contact-item img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  text-align: left;
+  object-fit: contain;
+}
+
+.contact-item span {
+  margin-left: 4px;
+  text-align: left;
 }
 
 /* Welcome Text */
@@ -208,25 +225,7 @@ footer {
   text-align: center;
   padding: 20px 0;
   /* border-top: 1px solid #ddd; */
-  margin-top: 40px;
-}
-
-.contact-item {
-  margin-bottom: 8px;
-}
-
-.contact-item a {
-  display: flex;
-  align-items: center;
-}
-
-.contact-item i {
-  width: 20px;
-  margin-right: 8px;
-}
-
-.contact-item span {
-  margin-left: 4px;
+  margin-top: auto;
 }
 
 .welcome-content {
@@ -240,5 +239,9 @@ footer {
 }
 
 .welcome-text {
+  flex: 1;
+}
+
+main {
   flex: 1;
 } 
