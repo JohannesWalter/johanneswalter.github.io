@@ -21,7 +21,7 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 /* Header Top (Name) */
@@ -32,30 +32,40 @@ body {
 
 /* Navigation Bar */
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: #fff;
+  background-color: var(--header-background);
+  padding: 20px;
 }
-.navbar ul {
+
+.nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
-  padding: 10px 0;
+  margin: 0;
+  padding: 0;
 }
-.navbar li {
+
+.nav-links li {
   margin: 0 20px;
+  padding: 8px 0;
 }
-.navbar a {
+
+.nav-links a {
   text-decoration: none;
   color: #333;
-  font-size: 1rem;
 }
 
 /* Welcome Section */
 .welcome-section {
   display: flex;
-  align-items: center;
-  margin-top: 40px;
+  align-items: flex-start;
+  margin: 0 auto;  /* Center horizontally */
+  padding-top: 90px;  /* Add some space at the top */
+  width: 90%;  /* Match container width */
+  max-width: 1200px;  /* Match container max-width */
 }
 
 /* Welcome Image */
@@ -118,15 +128,6 @@ body {
 }
 
 /* Navbar */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-}
-
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -134,24 +135,10 @@ body {
   color: #333;
 }
 
-.navbar .nav-links {
-  list-style: none;
-  display: flex;
-}
-
-.navbar .nav-links li {
-  margin-left: 20px;
-}
-
-.navbar .nav-links a {
-  text-decoration: none;
-  color: #333;
-}
-
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px;
   background-color: #fff;
   margin-bottom: 20px;
 }
@@ -232,6 +219,7 @@ footer {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
+  width: 100%;  /* Take full width of parent */
 }
 
 .welcome-image {
@@ -248,41 +236,68 @@ main {
 
 /* Dark mode styles */
 :root {
-    --background-color: #ffffff;
-    --text-color: #333333;
-    --link-color: #0066cc;
-  }
-  
-  [data-theme="dark"] {
-    --background-color: #1a1a1a;
-    --text-color: #ffffff;
-    --link-color: #66b3ff;
-  }
-  
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: all 0.3s ease;
-  }
-  
-  a {
-    color: var(--link-color);
-  }
-  
-  #darkModeToggle {
-    cursor: pointer;
-  }
-  
-  #darkModeToggle i {
-    font-size: 1.2rem;
-  }
-  
-  /* Adjust other elements for dark mode */
-  [data-theme="dark"] header,
-  [data-theme="dark"] footer {
-    background-color: #2d2d2d;
-  }
-  
-  [data-theme="dark"] .navbar a {
-    color: var(--text-color);
-  }
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #0066cc;
+  --header-background: #ffffff;
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --link-color: #66b3ff;
+  --header-background: #1a1a1a;
+}
+
+/* Make sure header and navbar follow the theme */
+header {
+  background-color: var(--header-background);
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  background-color: var(--header-background);
+  transition: all 0.3s ease;
+}
+
+.navbar a {
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+}
+
+#darkModeToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#darkModeToggle i {
+  font-size: 1.2rem;
+}
+
+/* Change text content based on theme */
+[data-theme="dark"] #darkModeToggle .mode-text {
+  content: "Light Mode";
+}
+
+/* Adjust other elements for dark mode */
+[data-theme="dark"] header,
+[data-theme="dark"] footer {
+  background-color: var(--header-background);
+}
+
+[data-theme="dark"] .navbar a {
+  color: var(--text-color);
+}
