@@ -3,3 +3,4 @@
 - make light mode consistent across pages
 - add Beyond Academia page
 - add Teaching page?
+- the currently selected page should be underlined in the navigation bar
