@@ -63,7 +63,7 @@ body {
   display: flex;
   align-items: flex-start;
   margin: 0 auto;  /* Center horizontally */
-  padding-top: 90px;  /* Add some space at the top */
+  padding-top: 30px;  /* Reduced space at the top */
   width: 90%;  /* Match container width */
   max-width: 1200px;  /* Match container max-width */
 }
