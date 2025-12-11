@@ -190,20 +190,86 @@ body {
 .paper-list {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.paper-list li {
-  margin-bottom: 15px;
+.paper-item {
+  padding: 1.5rem;
+  border-left: 3px solid var(--link-color);
+  background-color: var(--paper-bg);
+  border-radius: 0 8px 8px 0;
+  transition: all 0.2s ease;
 }
 
-.paper-list a {
-  text-decoration: none;
+.paper-item:hover {
+  border-left-width: 5px;
+  background-color: var(--paper-bg-hover);
+}
+
+.paper-title {
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--text-color);
-  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
-.paper-list a:hover {
+.paper-meta {
+  font-size: 0.95rem;
+  color: var(--meta-color);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.paper-abstract {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.paper-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.paper-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  background-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.paper-links a:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* Legacy support for old .links class */
+.links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-size: 0.9rem;
+}
+
+.links a:hover {
   text-decoration: underline;
 }
 
@@ -240,6 +306,9 @@ main {
   --text-color: #333333;
   --link-color: #0066cc;
   --header-background: #ffffff;
+  --paper-bg: #f8f9fa;
+  --paper-bg-hover: #f0f1f3;
+  --meta-color: #666666;
 }
 
 [data-theme="dark"] {
@@ -247,6 +316,9 @@ main {
   --text-color: #ffffff;
   --link-color: #66b3ff;
   --header-background: #1a1a1a;
+  --paper-bg: #252525;
+  --paper-bg-hover: #2d2d2d;
+  --meta-color: #aaaaaa;
 }
 
 /* Make sure header and navbar follow the theme */
